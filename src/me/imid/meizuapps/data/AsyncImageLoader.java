@@ -14,7 +14,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 
 public class AsyncImageLoader {
 	private Context mContext;
