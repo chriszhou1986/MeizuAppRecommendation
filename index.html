@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Flyme OS Apps互推 : 很多开发者会在自己的应用中内置APP互推。 我结合Jsoup写了这个库 可以从meizu store上爬数据生成应用列表 ，点击可进入Mstore 相应页面" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Flyme OS Apps互推</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/IssacWang/MeizuAppRecommendation">View on GitHub</a>
+
+          <h1 id="project_title">Flyme OS Apps互推</h1>
+          <h2 id="project_tagline">很多开发者会在自己的应用中内置APP互推。 我结合Jsoup写了这个库 可以从meizu store上爬数据生成应用列表 ，点击可进入Mstore 相应页面</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/IssacWang/MeizuAppRecommendation/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/IssacWang/MeizuAppRecommendation/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>项目简介</h3>
+
+<p>开发者都乐于在自己的应用中使用互推的形式，推荐自己的其他作品。在不同的app中维护同一个列表也是很麻烦的。
+为此我开发了这个听上去牛逼哄哄的“Flyme OS Apps互推系统”
+使用的技术很简单，就是爬虫加上一点Android的基本技能。</p>
+
+<h3>使用效果</h3>
+
+<p>该列表包含了指定开发者的所有App，点击某一行会进入到mstore相应的页面中
+<img src="http://i.imgur.com/57gTk.jpg" alt=""></p>
+
+<h3>导入方式</h3>
+
+<p><strong>1. 作为library导入到所需工程中</strong>
+<a href="http://imgur.com/Yl2jm.png"><img title="Hosted by imgur.com" src="http://i.imgur.com/Yl2jm.png" alt=""></a>
+ 
+<strong>2. 注册Activity，在manifest中添加如下代码</strong></p>
+
+<div class="highlight">
+<pre><span class="nt">&lt;activity</span>
+     <span class="na">android:name=</span><span class="s">"me.imid.meizuapps.MeizuAppsActivity"</span>
+     <span class="na">android:label=</span><span class="s">"@string/label_otherapps"</span> <span class="na">android:theme=</span><span class="s">"@android:style/Theme.Light.NoTitleBar"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/activity&gt;</span>
+</pre>
+</div>
+
+
+<p><strong>3. 添加权限</strong></p>
+
+<div class="highlight">
+<pre><span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.INTERNET"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.WRITE_EXTERNAL_STORAGE"</span> <span class="nt">/&gt;</span>
+</pre>
+</div>
+
+
+<p><strong>4. 配置url</strong>
+修改Config.java 中的developerUrl 为目标开发者链接，这个链接可以在开发者控制台中找到。
+比如我的就是:<a href="http://app.meizu.com/imid">http://app.meizu.com/imid</a></p>
+
+<p><strong>5. 使用以下代码跳转到app互推目录</strong></p>
+
+<div class="highlight">
+<pre><span class="n">startActivity</span><span class="o">(</span><span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">(),</span><span class="n">MeizuAppsActivity</span><span class="o">.</span><span class="na">class</span><span class="o">));</span>
+</pre>
+</div>
+
+
+<h3>关于作者</h3>
+
+<p>碎星De雨  <a href="http://weibo.com/issacsuixing">weibo</a></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Flyme OS Apps互推 maintained by <a href="https://github.com/IssacWang">IssacWang</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
